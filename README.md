@@ -47,15 +47,13 @@ Open the frontend URL in your browser and the app should connect to the backend 
 - `backend`: run `node index.js` to start the Express server.
 - `frontend`: run `npm run dev` inside `frontend/` (Vite dev server).
 
-## Environment
 
-- There are no required env files for local development. If you add one, document it here.
 
-## Development Process (AI-assisted examples)
+## Development Process
 
-We used AI tools to speed up design and implementation. Below are examples showing prompts, AI outputs (abridged), and how we used them.
+I used AI tools to speed up design and implementation. Below are examples showing prompts, AI outputs (abridged), and how I used them.
 
-### Example 1 — Tailwind card layout
+### Tailwind card layout
 
 - Prompt given:
 
@@ -76,7 +74,7 @@ Generate a Tailwind CSS card layout with hover animations for a note component. 
 </div>
 ```
 
-- How we modified/verified:
+- How I modified/verified:
 
   - Converted to a darker theme to match the app design.
   - Reduced paddings and font sizes for a more compact card.
@@ -84,9 +82,9 @@ Generate a Tailwind CSS card layout with hover animations for a note component. 
 
 - Why the changes:
 
-  - The AI suggestion was a good baseline; we adjusted spacing and colors to match the app's visual language and improve readability.
+  - The AI suggestion was a good baseline; I adjusted spacing and colors to match the app's visual language and improve readability.
 
-### Example 2 — Color palette and typography
+### Color palette and typography
 
 - Prompt given:
 
@@ -101,7 +99,7 @@ colors: { brand: {50:'#faf5ff',100:'#f3e8ff',500:'#7c3aed',600:'#6d28d9'} },
 fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
 ```
 
-- How we modified/verified:
+- How I modified/verified:
 
   - Integrated the palette into `tailwind.config.js`.
   - Added Google Fonts `Inter` link in `index.html` for local development.
@@ -111,7 +109,7 @@ fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
 
   - The palette gave a premium look. Small contrast tweaks ensured legibility across components.
 
-### Example 3 — Troubleshooting build error
+### Troubleshooting build error
 
 - Prompt given:
 
@@ -125,7 +123,7 @@ I get an error from Tailwind: "Cannot apply unknown utility class '-translate-y-
 The negative translate utility cannot be used with @apply in some setups. Use explicit transform values in your CSS (e.g., transform: translateY(-0.5rem)) or enable the needed utility with @reference.
 ```
 
-- How we modified/verified:
+- How I modified/verified:
 
   - Replaced `@apply -translate-y-2` with `transform: translateY(-0.5rem)` in `src/main.css` to avoid build-time parsing issues.
   - Restarted Vite and confirmed the dev server no longer threw the error.
@@ -134,11 +132,4 @@ The negative translate utility cannot be used with @apply in some setups. Use ex
 
   - This avoids Tailwind's parser limitation with `@apply` and negative utilities while keeping the intended animation.
 
-## Notes & contributions
 
-- Use branches and open PRs for feature work.
-- You're welcome to enhance UI, add tests, or wire a production-ready DB.
-
----
-
-If you want, I can also add a short `CONTRIBUTING.md` and a GitHub Actions workflow to run lint/tests on PRs.
