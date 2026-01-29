@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+@layer components {	
+	.fade-slide-enter-from { opacity: 0; transform: translateY(-0.5rem) scale(.95); }
+	.fade-slide-enter-to { opacity: 1; transform: translateY(0) scale(1); }
+	.fade-slide-leave-to { opacity: 0; transform: translateY(-0.5rem) scale(.95); }
+	.fade-slide-enter-active, .fade-slide-leave-active { transition: transform 180ms cubic-bezier(.4,0,.2,1), opacity 180ms cubic-bezier(.4,0,.2,1); }
+
+	.list-enter-from { opacity: 0; transform: translateY(0.5rem) scale(.95); }
+	.list-enter-to { opacity: 1; transform: translateY(0) scale(1); }
+	.list-enter-active { transition: transform 200ms cubic-bezier(.4,0,.2,1), opacity 200ms cubic-bezier(.4,0,.2,1); }
+}
